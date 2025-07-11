@@ -43,8 +43,25 @@ const blogPostSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
+const ExperienceSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  company: { type: String, required: true },
+  location: String,
+  startDate: { type: Date, required: true },
+  endDate: Date,
+  category: {
+    type: String,
+    enum: ['data-science', 'ai-ml', 'software-engineer'],
+    required: true
+  },
+  summary: { type: String, required: true },
+  details: [{ type: String }], // now an array of bullet points
+  logoUrl: String
+});
+
 const Project = mongoose.model('Project', projectSchema);
 const BlogPost = mongoose.model('BlogPost', blogPostSchema);
+const Experience = mongoose.model('Experience', ExperienceSchema);
 
 // Routes
 app.get('/', (req, res) => {
@@ -109,6 +126,21 @@ app.post('/api/blog', async (req, res) => {
     res.status(201).json(post);
   } catch (error) {
     res.status(400).json({ error: 'Error creating blog post' });
+  }
+});
+
+// Experiences API
+app.get('/api/experiences', async (req, res) => {
+  try {
+    const { category } = req.query;
+    let filter = {};
+    if (category) {
+      filter.category = category;
+    }
+    const experiences = await Experience.find(filter).sort({ startDate: -1 });
+    res.json(experiences);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching experiences' });
   }
 });
 

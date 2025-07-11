@@ -5,6 +5,8 @@ import axios from 'axios'
 import { motion } from 'framer-motion'
 import { Github, ExternalLink, Mail, Linkedin, Twitter } from 'lucide-react'
 import { ThemeToggle } from './components/ThemeToggle'
+import ResumeSection from './components/ResumeSection'
+import ExperienceSection from './components/ExperienceSection'
 
 interface Project {
   _id: string
@@ -65,9 +67,34 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
+            <div className="flex justify-center space-x-6">
+              <a
+                href="mailto:vatsal.12505@gmail.com"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+              >
+                <Mail size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vatsal-labh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="https://github.com/Jimbob12505"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+              >
+                <Github size={24} />
+              </a>
+            </div>
             </div>
             <div className="flex items-center space-x-4">
               <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Projects</a>
+              <a href="#resume" className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Resume</a>
               <a href="#blog" className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Blog</a>
               <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Contact</a>
               <ThemeToggle />
@@ -119,6 +146,12 @@ export default function Home() {
                   className="bg-primary-500 dark:bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-600 dark:hover:bg-primary-700 transition-colors"
                 >
                   View My Work
+                </a>
+                <a
+                  href="#resume"
+                  className="border border-primary-500 dark:border-primary-400 text-primary-500 dark:text-primary-400 px-6 py-3 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
+                >
+                  View Resume
                 </a>
                 <a
                   href="#contact"
@@ -206,6 +239,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Experience Section */}
+      <ExperienceSection />
+
+      {/* Resume Section */}
+      <ResumeSection />
 
       {/* Blog Section */}
       <section id="blog" className="py-20 bg-white dark:bg-gray-800 transition-colors">
