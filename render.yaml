@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: portfolio-app
+    env: docker
+    dockerfilePath: ./docker-compose.prod.yml
+    autoDeploy: true
