@@ -42,7 +42,7 @@ export default function ExperienceSection() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/experiences?category=${selectedCategory}`)
+      .get(`/api/experiences?category=${selectedCategory}`)
       .then((res) => setExperiences(res.data))
       .catch(() => setExperiences([]))
       .finally(() => setLoading(false));

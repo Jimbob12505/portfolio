@@ -1,18 +1,17 @@
-FROM node:18-alpine
-
+# frontend/Dockerfile
+# 1) build stage
+FROM node:18-alpine AS builder
 WORKDIR /app
-
-# Copy package files
 COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy source code
+RUN npm ci
 COPY . .
+RUN npm run build
 
-# Expose port
+# 2) production stage
+FROM node:18-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/ ./
 EXPOSE 3000
+CMD ["npm", "run", "start"]
 
-# Start the development server
-CMD ["npm", "run", "dev"] 

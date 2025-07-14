@@ -12,14 +12,14 @@ interface Resume {
   filename: string
   icon: string
 }
-
+//Labh_Vatsal_Resume_AI_ML.pdf  Labh_Vatsal_Resume_Data_Analyst.pdf  Labh_Vatsal_Resume_SoftwareEngineer.pdf
 const resumes: Resume[] = [
   {
     id: 'ai-ml',
     title: 'AI & ML Resume',
     role: 'AI/ML Engineer',
     description: 'Specialized in machine learning, deep learning, and artificial intelligence projects.',
-    filename: 'Labh_Vatsal_Resume (AI&ML).pdf',
+    filename: 'Labh_Vatsal_Resume_AI_ML.pdf',
     icon: '🤖'
   },
   {
@@ -27,7 +27,7 @@ const resumes: Resume[] = [
     title: 'Data Analyst Resume',
     role: 'Data Analyst',
     description: 'Focused on data analysis, visualization, and business intelligence.',
-    filename: 'Labh_Vatsal_Resume (Data Analyst).pdf',
+    filename: 'Labh_Vatsal_Resume_Data_Analyst.pdf',
     icon: '📊'
   },
   {
@@ -35,7 +35,7 @@ const resumes: Resume[] = [
     title: 'Software Engineer Resume',
     role: 'Software Engineer',
     description: 'Full-stack development, system design, and software architecture.',
-    filename: 'Labh_Vatsal_Resume (Software Engineering 2025).pdf',
+    filename: 'Labh_Vatsal_Resume_SoftwareEngineer.pdf',
     icon: '💻'
   }
 ]
@@ -45,8 +45,9 @@ export default function ResumeSection() {
   const [isViewerOpen, setIsViewerOpen] = useState(false)
 
   const handleDownload = (resume: Resume) => {
-    const link = document.createElement('a')
-    link.href = `/files/${resume.filename}`
+  const encoded = encodeURIComponent(resume.filename)  
+  const link = document.createElement('a')
+    link.href = `/files/${encoded}`
     link.download = resume.filename
     document.body.appendChild(link)
     link.click()
@@ -169,7 +170,7 @@ export default function ResumeSection() {
             </div>
             <div className="flex-1 p-4">
               <iframe
-                src={`/files/${selectedResume.filename}#toolbar=0`}
+                src={encodeURI(`/files/${selectedResume.filename}#toolbar=0`)}
                 className="w-full h-full rounded-lg border border-gray-200 dark:border-gray-700"
                 title={selectedResume.title}
               />

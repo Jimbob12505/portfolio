@@ -37,8 +37,8 @@ export default function Home() {
     const fetchData = async () => {
       try {
         const [projectsRes, blogRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/projects'),
-          axios.get('http://localhost:5000/api/blog')
+          axios.get('/api/projects'),
+          axios.get('/api/blog')
         ])
         setProjects(projectsRes.data)
         setBlogPosts(blogRes.data)
@@ -138,7 +138,7 @@ export default function Home() {
               </h1>
               <p className="mt-6 text-xl font-junicode text-gray-600 dark:text-gray-300 transition-colors">
                 I am a software engineer, data scientist, and AI practitioner who likes turning complex ideas into working, reliable systems.
-                I recently graduated Summa Cum Laude with a B.Sc. in Computer Science from Princeton University, where I spent my time combining strong engineering with deep data science and modern AI techniques and shipping them into real, scalable products.        
+                I recently graduated Summa Cum Laude with a B.Sc. in Computer Science from University at Buffalo where I spent my time combining strong engineering with deep data science and modern AI techniques and shipping them into real, scalable products.        
               </p>
               <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <a
