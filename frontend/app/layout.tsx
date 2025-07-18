@@ -160,6 +160,31 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} ${junicode.variable}`}>
         <ThemeProvider>
+          <div className="sr-only">
+            <h1>Vatsal Labh – Software Engineer, Data Scientist, AI/ML Practitioner</h1>
+            <p>
+              Hi I'm Vatsal Labh, a software engineer, data scientist, and AI/ML practitioner. I'm currently a student at University at Buffalo, pursuing a B.Sc. in Computer Science. I'm interested in software development, data science, and AI/ML. I'm also interested in cloud computing, distributed systems, and graph databases.
+            </p>
+            <p>
+            Designed a graph-based fraud detection engine using PySpark GraphFrames and Neo4j, modeling user, device, and IP relationships to identify anomalous behavior across large transaction networks. Achieved 92% precision with a Gradient Boosting classifier on graph-derived features and scaled deep learning pipelines using PyTorch DDP.
+            </p>
+            <p>
+            Led end-to-end development of a Learning Management System by integrating React with Moodle APIs, deploying a cloud-based backend with Node.js and MongoDB, and ensuring scalability with Nginx and AWS EC2.
+            </p>
+            <p>
+            Built a modular LSTM and TFT-based time series forecasting pipeline for financial data prediction using TensorFlow and MLflow. Included monitoring with EvidentlyAI and automated retraining with Airflow and Docker, improving forecasting accuracy by 15% over baseline ARIMA models.
+            </p>
+            <p>
+            Led the development of an AI-powered anomaly detection platform for hydroponic agriculture, designing predictive models to identify abnormal plant physiology. Built a full-stack cloud pipeline on AWS with MongoDB for telemetry, and developed a real-time dashboard in React and Node.js for monitoring and alert visualization.
+            </p>
+            <p>
+            Designed an automated grading system using C (Criterion) and Java (JUnit) for object-oriented and systems-level assignments. Also developed and mentored students through a capstone project to build a complete RPG game in Java, integrating OOP principles, file I/O, and design patterns with modern software engineering best practices.
+            </p>
+            <p>
+            Developed Coriolis-lite, a lightweight C++ metagenomic classifier optimized for mobile ARM-based platforms like NVIDIA Jetson and Oxford Nanopore MinION. Achieved high throughput and significant index compression for efficient field-ready DNA analysis.
+            </p>
+            <p> Vatsal Labh Portfolio Website Software Engineer, Data Scientist, AI/ML Practitioner</p>
+          </div>
           {children}
         </ThemeProvider>
       </body>
