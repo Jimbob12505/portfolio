@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vatsal Labh – Portfolio",
     description: "Portfolio of Vatsal Labh: Software Engineer, Data Scientist, and AI/ML Practitioner.",
-    url: "https://yourdomain.com",
+    url: "https://vatsal.online",
     siteName: "Vatsal Labh Portfolio",
     images: [
       {
@@ -131,6 +131,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Vatsal Labh",
+              "url": "https:/vatsal.online",
+              "image": "https://vatsal.online/images/profile-picture.png",
+              "sameAs": [
+                "https://www.linkedin.com/in/vatsallabh",
+                "https://github.com/Jimbob12505"
+              ],
+              "jobTitle": "Software Engineer, Data Scientist, AI/ML Practitioner",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Princeton University"
+              },
+              "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "University at Buffalo"
+              }
+            })
+          }}
+        />
+      </head>
       <body className={`${inter.className} ${junicode.variable}`}>
         <ThemeProvider>
           {children}
