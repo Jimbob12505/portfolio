@@ -7,6 +7,7 @@ import { Github, ExternalLink, Mail, Linkedin, Twitter } from 'lucide-react'
 import { ThemeToggle } from './components/ThemeToggle'
 import ResumeSection from './components/ResumeSection'
 import ExperienceSection from './components/ExperienceSection'
+import TerminalShell from './components/TerminalShell'
 
 interface Project {
   _id: string
@@ -338,6 +339,9 @@ export default function Home() {
           <p>&copy; 2025 Vatsal Labh. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Terminal Shell */}
+      <TerminalShell />
     </div>
   )
 } 
